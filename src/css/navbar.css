@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.flex-left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+li{
+    padding:15px;
+    padding-bottom:25px;
+
+}
+.nav-hover{
+    cursor: pointer;
+    border-bottom:3px solid white;
+}
+.nav-hover:hover{
+    border-bottom:3px solid orange;
+    transition: 0.5s;
+}
+
+.nav-hover-burger{
+    cursor: pointer;
+    border-bottom:3px solid white;
+}
+.hidden{
+    display: none;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.avatar{
+    height:50px;
+    margin-left:35px;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    
+}
+.avatar:hover{
+    border: 2px solid orange;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.logo{
+    font-size:35px;
+    margin-right:25px;
+    cursor: pointer;
+    font-weight: 700;
+}
+.flex img{
+    cursor: pointer;
+}
+
+.burger-menu{
+    display: block;
+}
+
+
+@media screen and (max-width: 768px) {
+    .hidden{
+        display: block;
+        cursor: pointer;
+        position: absolute;
+        left:10px;
+    
+    }
+    .Menu{
+        list-style: none;
+        display: none;
+    }
+
+    .updateMenu{
+        list-style: none;
+        display: block;
+      
+        
+    }
+
+    .nav{
+        justify-content: center;
+        margin: 0;
+    }
+    .nav-hover{
+        display: none;
+    }
+    .logo{
+        position: absolute;
+        left:30px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    /* CSS rules for screens with a width of 1024px or more */
+  }
+  
