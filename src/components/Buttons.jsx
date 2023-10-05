@@ -2,13 +2,17 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import {useState} from "react";
-function Buttons(){
+function Buttons(props){
     const[count, setCount]= useState(0);
+    const [price,setPrice] = useState(125.00);
     
 
     function onAdd(){
         setCount(count + 1)
-        
+        if (count >=1) {
+            setPrice(count * price)
+        }
+        console.log(price)
     }
 
     function onDelete(){

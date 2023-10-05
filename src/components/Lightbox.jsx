@@ -1,11 +1,8 @@
-import thumbnail1 from "../assets/images/image-product-1-thumbnail.jpg";
-import thumbnail2 from "../assets/images/image-product-2-thumbnail.jpg";
-import thumbnail3 from "../assets/images/image-product-3-thumbnail.jpg";
-import thumbnail4 from "../assets/images/image-product-4-thumbnail.jpg";
-import mainImage from "/images/image-product-1.jpg";
-
+import {useState} from "react";
 
 function Lightbox(){
+
+    const[img, setImg] =useState("/images/image-product-1.jpg")
 
     const thumbnailImages = 
     [
@@ -22,14 +19,16 @@ function Lightbox(){
         "/images/image-product-3.jpg",
         "/images/image-product-4.jpg"
     ]
-    function handleClick(){
-        console.log("clicked")
+    function handleClick(event){
+        const newImg = productImages[event.currentTarget.id]
+        setImg(newImg)
     }
 
     return(
         <>
+        <img className="mainImg"src={img} />     
         <div className="light-box">
-        {thumbnailImages.map((img,index)=> <img className="thumbnail" src={img} key={index} id={index}></img>)}
+        {thumbnailImages.map((img,index)=> <img className="thumbnail" src={img} key={index} id={index} onClick={handleClick}></img>)}
         </div>
 
 

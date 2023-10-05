@@ -3,11 +3,11 @@ import avatar from "../assets/images/image-avatar.png"
 import MenuIcon from '@mui/icons-material/Menu';
 import "../css/navbar.css"
 import {useState} from "react";
-function Navbar(){
+function Navbar(props){
 
     const[burgerMenu, setBurgerMenu]= useState("hidden")
     const[menu,setMenu]= useState("Menu")
-    const[click, isClicked] = useState(false);
+    const [toggle, setToggle] = useState(false)
 
 
     function handleClick(){
@@ -40,7 +40,26 @@ function Navbar(){
        
             <div className="flex-right">
                 <div className="flex">
-                    <img src={cart}></img>
+                    <div className="cart">
+                    <img src={cart} onClick={() => setToggle(!toggle)} ></img>
+                   {toggle &&(<div className="shopping-cart">
+                        <p className="shopping-cart-text">Cart</p>
+                        <div className="flex">
+                        <div className="flex-cart-left">
+                        <img src= "/images/image-product-1-thumbnail.jpg" className="cart-img"/>
+                        </div>
+                        <div className="flex-cart-right">
+                            <p className="cart-item">Fall Limited Edition Sneakers</p>
+                            <div className="cart-flex-prices">
+                                <p className="cart-price">$125.00</p>
+                                <p className="cart-total">375</p>
+                            </div>
+                        </div>
+                       
+                        </div>
+                        <button className="add-to-cart-cart">Checkout</button>
+                    </div>)}
+                    </div>
                     <img className="avatar" src={avatar}></img>
 
                 </div>

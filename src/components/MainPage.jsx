@@ -1,17 +1,17 @@
-import mainImage from "../assets/images/image-product-1.jpg";
-import {useState} from "react";
 import "../css/MainPage.css"
 import Lightbox from "../components/Lightbox";
 import Button from "../components/Buttons"
 function MainPage(){
 
-const[active,isActive]=useState("thumbnail active")
+    function onChange(){
+        return
+    }
 
 
     return(
     <div className="container"> 
         <div className="flex-left-main-page">
-            <img className="mainImg"src={mainImage} />     
+        
                <Lightbox />
         </div>
 
